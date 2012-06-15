@@ -33,6 +33,7 @@
 #define DEBUG_BUILD	1
 #define DEBUG_VIDEO	1
 #define DEBUG_ERROR	1
+#define HAVE_MALLOC 1
 
 #define PSDL_VERSION	"0.0.1"
 
