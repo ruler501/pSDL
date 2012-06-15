@@ -36,6 +36,8 @@
 #include "SDL_config_symbian.h"  /* must be before win32! */
 #elif defined(__TINSPIRE__)
 #include "SDL_config_tinspire.h"
+#elif defined(__PRIZM__)
+#include "SDL_config_prizm.h"
 #elif defined(__WIN32__)
 #include "SDL_config_win32.h"
 #elif defined(__OS2__)

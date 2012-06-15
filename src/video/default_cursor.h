@@ -74,7 +74,7 @@ static unsigned char default_cmask[] =
  0x03,0x00
 };
 
-#elif USE_TINSPIRE_CURSOR
+#elif USE_TINSPIRE_CURSOR || USE_PRIZM_CURSOR
 
 static unsigned char default_cdata[] =
 {

@@ -279,6 +279,11 @@ int nSDL_GetStringHeight(nSDL_Font *font, const char *s);
 SDL_Surface *nSDL_LoadImage(Uint16 *data);
 #endif
 
+#ifdef __TINSPIRE__
+
+SDL_Surface *pSDL_LoadImage(Uint16 *data);
+#endif
+
 /* Function prototypes */
 
 /**
