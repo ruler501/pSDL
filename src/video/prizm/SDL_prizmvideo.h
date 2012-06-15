@@ -20,7 +20,7 @@
     slouken@libsdl.org
 */
 
-#include <os.h>
+//#include <os.h>
 
 #include "SDL_config.h"
 
@@ -44,7 +44,7 @@
 
 /* Private display data */
 
-char* VRAM = (char *) GetVRAMAddress();
+char* VRAM = 0xA8000000; //(char *) GetVRAMAddress();
 
 struct SDL_PrivateVideoData {
 	int w, h;

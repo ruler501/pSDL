@@ -23,7 +23,7 @@
 
 #include "SDL_prizmvideo.h"
 
-#include <keyboard.hpp>
+//#include <keyboard.hpp>
 
 enum {
     PZM_KEY_ACON,//   = 10,
@@ -52,7 +52,7 @@ enum {
     PZM_KEY_SHIFT,//  = 78
     PZM_KEY_MENU,//   = 48
     PZM_NUMKEYS
-    }
+    };
 
 /* Variables and functions exported by SDL_sysevents.c to other parts
    of the native video subsystem (SDL_sysvideo.c)

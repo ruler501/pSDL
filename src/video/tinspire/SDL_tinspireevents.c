@@ -24,6 +24,7 @@
 #include "SDL.h"
 #include "../../events/SDL_sysevents.h"
 #include "../../events/SDL_events_c.h"
+#include "SDL_keyboard.h"
 #include "../SDL_cursor_c.h"
 
 #include "SDL_tinspirevideo.h"

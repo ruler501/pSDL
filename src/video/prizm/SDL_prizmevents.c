@@ -25,11 +25,12 @@
 #include "../../events/SDL_sysevents.h"
 #include "../../events/SDL_events_c.h"
 #include "../SDL_cursor_c.h"
+#include "SDL_keyboard.h"
 
 #include "SDL_prizmvideo.h"
 #include "SDL_prizmevents_c.h"
 
-static t_key pzmk_keymap[PZM_NUMKEYS];
+static int pzmk_keymap[PZM_NUMKEYS];
 static SDLKey sdlk_keymap[PZM_NUMKEYS] = {SDLK_UNKNOWN};
 static char key_state[PZM_NUMKEYS] = {SDL_RELEASED};
 
@@ -111,7 +112,7 @@ void PZM_InitOSKeymap(_THIS)
 
 
 	/* Enum value -> SDLK_* */
-	sdlk_keymap[PZM_KEY_ACON]   = SDLK_UNKOWN;
+	sdlk_keymap[PZM_KEY_ACON]   = SDLK_POWER;
 	sdlk_keymap[PZM_KEY_DOWN]   = SDLK_DOWN;
 	sdlk_keymap[PZM_KEY_EXIT]   = SDLK_ESCAPE;
 	sdlk_keymap[PZM_KEY_F1]     = SDLK_F1;
@@ -121,7 +122,7 @@ void PZM_InitOSKeymap(_THIS)
 	sdlk_keymap[PZM_KEY_F5]     = SDLK_F5;
 	sdlk_keymap[PZM_KEY_F6]     = SDLK_F6;
 	sdlk_keymap[PZM_KEY_LEFT]   = SDLK_LEFT;
-	sdlk_keymap[PZM_KEY_RETURN] = SDLK_ENTER;
+	sdlk_keymap[PZM_KEY_RETURN] = SDLK_RETURN;
 	sdlk_keymap[PZM_KEY_RIGHT]  = SDLK_RIGHT;
 	sdlk_keymap[PZM_KEY_UP]     = SDLK_UP;
 	sdlk_keymap[PZM_KEY_1]      = SDLK_1;
@@ -133,8 +134,8 @@ void PZM_InitOSKeymap(_THIS)
 	sdlk_keymap[PZM_KEY_7]      = SDLK_7;
 	sdlk_keymap[PZM_KEY_8]      = SDLK_8;
 	sdlk_keymap[PZM_KEY_9]      = SDLK_9;
-	sdlk_keymap[PZM_KEY_ALPHA]  = SDLK_CTRL;
-	sdlk_keymap[PZM_KEY_SHIFT]  = SDLK_SHIFT;
+	sdlk_keymap[PZM_KEY_ALPHA]  = SDLK_LCTRL;
+	sdlk_keymap[PZM_KEY_SHIFT]  = SDLK_LSHIFT;
 	sdlk_keymap[PZM_KEY_MENU]   = SDLK_MENU;
 
 }

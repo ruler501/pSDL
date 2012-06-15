@@ -38,6 +38,7 @@ static VideoBootStrap *bootstrap[] = {
 #endif
 #if SDL_VIDEO_DRIVER_PRIZM
 	&PZM_bootstrap,
+#endif
 #if SDL_VIDEO_DRIVER_QUARTZ
 	&QZ_bootstrap,
 #endif
