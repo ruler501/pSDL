@@ -2,7 +2,7 @@ CC		=	/usr/local/cross/bin/sh3eb-elf-gcc
 AR		=	/usr/local/cross/bin/sh3eb-elf-ar
 RANLIB	=	/usr/local/cross/bin/sh3eb-elf-ranlib
 
-INCLUDE	=	-I include
+INCLUDE	=	-I include -I ../../include
 CFLAGS	=	-Wall -Wextra -D _PRIZM
 
 TARGET = libSDL.a

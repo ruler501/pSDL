@@ -102,6 +102,10 @@
 #undef __SOLARIS__
 #define __SOLARIS__	1
 #endif
+#if defined(_PRIZM)
+#undef __PRIZM__
+#define __PRIZM__	1
+#endif
 #if defined(_TINSPIRE)
 #undef __TINSPIRE__
 #define __TINSPIRE__	1

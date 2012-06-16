@@ -220,7 +220,7 @@ static void PZM_UpdateRects(_THIS, int numrects, SDL_Rect *rects)
 		if ( SDL_VideoSurface->format->BitsPerPixel == 16 ) {
 			/* 16 bpp SW, 16 bpp HW */
 			PZM_DRAW_LOOP(
-				SDL_memcpy(dst_addr, src_addr, row_bytes);
+				memcpy(dst_addr, src_addr, row_bytes);
 			);
 		} else {
 			/* 8 bpp SW, 16 bpp HW */
