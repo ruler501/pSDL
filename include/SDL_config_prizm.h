@@ -54,7 +54,7 @@
 //#define HAVE_STDARG_H	1
 //#define HAVE_STRING_H	1
 //#define HAVE_CTYPE_H	1
-//#define HAVE_STDINT_H 1
+#define HAVE_STDINT_H 1
 
 /* C library functions */
 #define HAVE_MALLOC	1
