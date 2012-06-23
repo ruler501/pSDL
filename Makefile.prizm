@@ -70,3 +70,8 @@ $(TARGET): $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
+
+install: all
+	mkdir -p ../../include/SDL
+	cp -r include ../../include/SDL
+	cp libSDL.a ../../lib
