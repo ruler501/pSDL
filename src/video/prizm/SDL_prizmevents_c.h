@@ -19,6 +19,9 @@
 	Sam Lantinga
 	slouken@libsdl.org
 */
+#ifndef _SDL_PRIZMEVENTS_C_H
+	#define _SDL_PRIZMEVENTS_C_H 1
+
 #include "SDL_config.h"
 
 #include "SDL_prizmvideo.h"
@@ -57,7 +60,8 @@ enum {
 /* Variables and functions exported by SDL_sysevents.c to other parts
    of the native video subsystem (SDL_sysvideo.c)
 */
-extern void NSP_InitOSKeymap(_THIS);
-extern void NSP_PumpEvents(_THIS);
+extern void PZM_InitOSKeymap(_THIS);
+extern void PZM_PumpEvents(_THIS);
 
 /* end of SDL_prizmevents_c.h ... */
+#endif

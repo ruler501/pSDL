@@ -39,8 +39,8 @@ unsigned short lastkey[8];
 unsigned short holdkey[8];
 
 void keyupdate(void) {
-    memcpy(holdkey, lastkey, sizeof(unsigned short)*8);
-    memcpy(lastkey, keyboard_register, sizeof(unsigned short)*8);
+    SDL_memcpy(holdkey, lastkey, sizeof(unsigned short)*8);
+    SDL_memcpy(lastkey, keyboard_register, sizeof(unsigned short)*8);
 }
 int keydownlast(int basic_keycode) {
     int row, col, word, bit;

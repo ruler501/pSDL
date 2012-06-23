@@ -65,7 +65,7 @@
 #ifdef memcpy
 #undef memcpy
 #endif
-#define memcpy	SDL_memcpy
+//#define memcpy	SDL_memcpy
 #ifdef memmove
 #undef memmove
 #endif

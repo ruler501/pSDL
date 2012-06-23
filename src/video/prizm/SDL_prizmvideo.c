@@ -28,6 +28,7 @@
 #include "../../events/SDL_events_c.h"
 
 #include "SDL_prizmvideo.h"
+#include "SDL_prizmevents_c.h"
 
 #define SCREEN_WIDTH 384
 #define SCREEN_HEIGHT 216
@@ -220,7 +221,7 @@ static void PZM_UpdateRects(_THIS, int numrects, SDL_Rect *rects)
 		if ( SDL_VideoSurface->format->BitsPerPixel == 16 ) {
 			/* 16 bpp SW, 16 bpp HW */
 			PZM_DRAW_LOOP(
-				memcpy(dst_addr, src_addr, row_bytes);
+				SDL_memcpy(dst_addr, src_addr, row_bytes);
 			);
 		} else {
 			/* 8 bpp SW, 16 bpp HW */

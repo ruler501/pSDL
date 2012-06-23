@@ -29,6 +29,7 @@
 
 #include "../SDL_sysvideo.h"
 
+
 /* Hidden "this" pointer for the video functions */
 #define _THIS	SDL_VideoDevice *this
 
@@ -44,7 +45,7 @@
 
 /* Private display data */
 
-char* VRAM = 0xA8000000; //(char *) GetVRAMAddress();
+char* VRAM = (char *) 0xA8000000;
 
 struct SDL_PrivateVideoData {
 	int w, h;
