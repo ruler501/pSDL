@@ -228,8 +228,8 @@ void SDL_Quit(void)
 
 	/* Print the number of surfaces not freed */
 	if ( surfaces_allocated != 0 ) {
-		fprintf(stderr, "SDL Warning: %d SDL surfaces extant\n", 
-							surfaces_allocated);
+		//fprintf(stderr, "SDL Warning: %d SDL surfaces extant\n", 
+							//surfaces_allocated);
 	}
 #endif
 #ifdef DEBUG_BUILD

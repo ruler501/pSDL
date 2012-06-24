@@ -27,7 +27,7 @@
 #include "../SDL_cursor_c.h"
 #include "SDL_keyboard.h"
 
-#include "SDL_prizmvideo.h"
+//#include "SDL_prizmvideo.h"
 #include "SDL_prizmevents_c.h"
 
 static int pzmk_keymap[PZM_NUMKEYS];

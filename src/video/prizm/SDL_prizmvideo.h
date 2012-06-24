@@ -33,6 +33,8 @@
 /* Hidden "this" pointer for the video functions */
 #define _THIS	SDL_VideoDevice *this
 
+char* VRAM = (char *) 0xA8000000;
+
 #define PZM_RMASK16 0xF800
 #define PZM_GMASK16 0x07E0
 #define PZM_BMASK16 0x001F
@@ -44,8 +46,6 @@
 						  0, SDL_VideoSurface->format->palette->ncolors)
 
 /* Private display data */
-
-char* VRAM = (char *) 0xA8000000;
 
 struct SDL_PrivateVideoData {
 	int w, h;

@@ -24,7 +24,7 @@
 
 #include "SDL_config.h"
 
-#include "SDL_prizmvideo.h"
+//#include "SDL_prizmvideo.h"
 
 //#include <keyboard.hpp>
 
