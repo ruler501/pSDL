@@ -20,6 +20,8 @@
     slouken@libsdl.org
 */
 
+#include <fxcg_syscalls.h>
+
 #include "SDL.h"
 #include "SDL_config.h"
 #include "SDL_mouse.h"
@@ -232,6 +234,7 @@ static void PZM_UpdateRects(_THIS, int numrects, SDL_Rect *rects)
 			);
 		}
 	}
+	Bdisp_PutDisp_DD(); 
 }
 
 #define PZM_MAP_RGB_PALETTE(r, g, b)	(((r / 8) << 11) | ((g / 4) << 5) | (b / 8))

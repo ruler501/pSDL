@@ -23,14 +23,14 @@
 
 #ifdef SDL_TIMER_PRIZM
 
-#include <SYSTEM_syscalls.h>
-#include <RTC_syscalls.h>
+#include <fxcg_syscalls.h>
+//#include <RTC_syscalls.h>
 
 #include "SDL_timer.h"
 #include "../SDL_timer_c.h"
 
 Uint32 start = 0;
-volatile unsigned char *R64CNT = (unsigned char*)0xA413FEC0;
+/*volatile unsigned char *R64CNT = (unsigned char*)0xA413FEC0;
 volatile unsigned char *RSECCNT = (unsigned char*)0xA413FEC2;
 volatile unsigned char *RMINCNT = (unsigned char*)0xA413FEC4;
 volatile unsigned char *RHRCNT = (unsigned char*)0xA413FEC6;
@@ -39,7 +39,7 @@ volatile unsigned char *RDAYCNT = (unsigned char*)0xA413FECA;
 volatile unsigned char *RMONCNT = (unsigned char*)0xA413FECC;
 volatile unsigned short *RYRCNT = (unsigned short*)0xA413FECE;
 volatile unsigned char *RCR1 = (unsigned char*)0xA413FEDC;
-volatile unsigned char *RCR2 = (unsigned char*)0xA413FEDE;
+volatile unsigned char *RCR2 = (unsigned char*)0xA413FEDE;*/
 
 void SDL_StartTicks(void)
 {
