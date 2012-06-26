@@ -113,6 +113,9 @@ static int PZM_VideoInit(_THIS, SDL_PixelFormat *vformat)
 	} else
 		vformat->BitsPerPixel = 8;*/
 	vformat->BitsPerPixel = 16;
+	vformat->Rmask = PZM_RMASK16;
+	vformat->Gmask = PZM_GMASK16;
+	vformat->Bmask = PZM_BMASK16;
 
 	this->info.current_w = SCREEN_WIDTH;
 	this->info.current_h = SCREEN_HEIGHT;
@@ -159,8 +162,9 @@ static SDL_Surface *PZM_SetVideoMode(_THIS, SDL_Surface *current,
 	}
 
 	this->hidden->buffer = SDL_malloc((bpp / 8) * width * height);
-	if ( ! this->hidden->buffer ) {
+	if ( this->hidden->buffer == NULL) {
 		SDL_SetError("Couldn't allocate buffer for requested mode");
+		SDL_OutOfMemory();
 		return(NULL);
 	}
 
