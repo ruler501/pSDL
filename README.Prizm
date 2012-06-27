@@ -1,0 +1,17 @@
+pSDL 0.1.0
+==========
+
+pSDL is a port of SDL for the Casio Prizm CG-10/20 calculators.
+
+Ported by Devon Richards (d.ruler501@gmail.com)
+Based on the nSDL port to TI-Nspire by Christoffer Rehn (christoffer.rehn@telenet.be)
+
+Dependencies:
+ pycompat branch of libfxcg (https://github.com/Jonimoose/libfxcg/tree/pycompat)
+
+To just compile run
+make -f Makefile.prizm
+and then manually copy over files
+To compile and install run
+make -f Makefile.prizm install
+which will once compiled install the files to the PrizmSDK so they can be used in projects
