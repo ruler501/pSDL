@@ -222,7 +222,7 @@ static void PZM_UpdateRects(_THIS, int numrects, SDL_Rect *rects)
 
 		src_addr = PZM_SURF_PIXEL(SDL_VideoSurface, rect->x, rect->y);
 		dst_addr = PZM_PIXEL_ADDR(VRAM, rect->x, rect->y, 2 * SCREEN_WIDTH, 2);
-		//dst_addr += this->hidden->offset;
+		dst_addr += this->hidden->offset;
 
 		if ( SDL_VideoSurface->format->BitsPerPixel == 16 ) {
 			/* 16 bpp SW, 16 bpp HW */
