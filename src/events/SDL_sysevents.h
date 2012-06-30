@@ -44,3 +44,7 @@
 #ifdef __OS2__		/* The OS/2 event loop runs in a separate thread */
 #define MUST_THREAD_EVENTS
 #endif
+
+#ifdef __PRIZM__ //Prizm doesnt do threading
+#define CANT_THREAD_EVENTS
+#endif

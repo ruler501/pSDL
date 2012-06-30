@@ -36,7 +36,7 @@
 //#define DEBUG_VIDEO	0
 //#define DEBUG_ERROR	0
 
-#define PSDL_VERSION	"0.1.0"
+#define PSDL_VERSION	"1.0.0"
 
 #if PZM_DEBUG
 #define PZM_DPRINT(fmt, args...) \

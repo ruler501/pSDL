@@ -377,7 +377,9 @@ void SDL_PumpEvents(void)
 		}
 
 		/* Queue pending key-repeat events */
+		#ifndef __PRIZM__
 		SDL_CheckKeyRepeat();
+		#endif
 
 #if !SDL_JOYSTICK_DISABLED
 		/* Check for joystick state change */

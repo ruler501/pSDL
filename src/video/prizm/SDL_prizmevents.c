@@ -68,7 +68,7 @@ void PZM_PumpEvents(_THIS)
 		if ( sdlk_keymap[i] == SDLK_UNKNOWN )
 			continue;
 		//BOOL key_pressed = isKeyPressed(nspk_keymap[i]);
-		int key_pressed = keydownlast(pzmk_keymap[i]);// && keydownhold(pzmk_keymap[i]);
+		int key_pressed = keydownlast(pzmk_keymap[i]) && keydownhold(pzmk_keymap[i]);// && keydownhold(pzmk_keymap[i]);
 		SDL_keysym keysym;
 		keysym.scancode = i;
 		keysym.sym = sdlk_keymap[i];
@@ -77,7 +77,7 @@ void PZM_PumpEvents(_THIS)
 				SDL_PrivateKeyboard(SDL_PRESSED, &keysym);
 				key_state[i] = SDL_PRESSED;
 			}
-		} else if ( ! key_pressed ) {
+		} else if ( ! key_pressed  ) {
 			SDL_PrivateKeyboard(SDL_RELEASED, &keysym);
 			key_state[i] = SDL_RELEASED;
 		}

@@ -74,7 +74,7 @@ void SDL_Delay (Uint32 ms)
 	OS_InnerWait_ms(ms%1000);
 	for( i=0; i<times; i++)
 	{
-		OS_InnerWait_ms(990);//reduce it a little for possible call delay
+		OS_InnerWait_ms(995);//reduce it a little for possible call delay
 	}
 }
 
