@@ -48,7 +48,7 @@
 //#define SDL_HAS_64BIT_TYPE	1
 
 /* Endianness */
-#define SDL_BYTEORDER	1234
+#define SDL_BYTEORDER	4321
 
 /* Useful headers */
 #define HAVE_STDIO_H	1
