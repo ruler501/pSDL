@@ -20,7 +20,7 @@
     slouken@libsdl.org
 */
 
-#include <fxcg_syscalls.h>
+#include <fxcg/display.h>
 
 #include "SDL.h"
 #include "SDL_config.h"

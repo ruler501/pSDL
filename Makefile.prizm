@@ -1,6 +1,6 @@
-CC		=	/usr/local/cross/bin/sh3eb-elf-gcc
-AR		=	/usr/local/cross/bin/sh3eb-elf-ar
-RANLIB	=	/usr/local/cross/bin/sh3eb-elf-ranlib
+CC		=	sh3eb-elf-gcc
+AR		=	sh3eb-elf-ar
+RANLIB	=	sh3eb-elf-ranlib
 
 INCLUDE	=	-I include -I ../../include
 CFLAGS	=	-Wall -Wextra -m4a-nofpu -mb -Os -mhitachi -lgcc -L../../lib -D _PRIZM 
