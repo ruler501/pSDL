@@ -29,7 +29,7 @@
 
 //#include "SDL_prizmvideo.h"
 #include "SDL_prizmevents_c.h"
-
+#include <fxcg/keyboard.h>
 static int pzmk_keymap[PZM_NUMKEYS];
 static SDLKey sdlk_keymap[PZM_NUMKEYS] = {SDLK_UNKNOWN};
 static char key_state[PZM_NUMKEYS] = {SDL_RELEASED};
@@ -58,7 +58,15 @@ int keydownhold(int basic_keycode) {
     bit = col + 8*(row&1);
     return (0 != (holdkey[word] & 1<<bit));
 }
-
+static int keydown(int basic_keycode) {
+	const unsigned short* keyboard_register = (unsigned short*)0xA44B0000;
+	int row, col, word, bit;
+	row = basic_keycode%10;
+	col = basic_keycode/10-1;
+	word = row>>1;
+	bit = col + ((row&1)<<3);
+	return (0 != (keyboard_register[word] & 1<<bit));
+}
 
 void PZM_PumpEvents(_THIS)
 {
@@ -81,6 +89,23 @@ void PZM_PumpEvents(_THIS)
 			SDL_PrivateKeyboard(SDL_RELEASED, &keysym);
 			key_state[i] = SDL_RELEASED;
 		}
+	}
+	//Also provide crude mouse support
+	if(keydown(KEY_PRGM_A)){
+		//Move mouse left
+		SDL_PrivateMouseMotion(0,1,-2,0);
+	}
+	if(keydown(KEY_PRGM_C)){
+		//Move mouse right
+		SDL_PrivateMouseMotion(0,1,2,0);
+	}
+	if(keydown(KEY_PRGM_XSQUARED)){
+		//Move mouse up
+		SDL_PrivateMouseMotion(0,1,0,2);
+	}
+	if(keydown(KEY_PRGM_H)){
+		//Move mouse down
+		SDL_PrivateMouseMotion(0,1,0,-2);
 	}
 }
 
