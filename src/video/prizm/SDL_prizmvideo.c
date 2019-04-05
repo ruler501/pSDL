@@ -205,6 +205,7 @@ static void PZM_UpdateRects(_THIS, int numrects, SDL_Rect *rects)
 	int src_skip = SDL_VideoSurface->pitch;
 	int dst_skip = (2 * SCREEN_WIDTH);
 	int i;
+    unsigned short* VRAM = (unsigned short*)GetVRAMAddress();
 
 	for ( i = 0; i < numrects; ++i ) {
 		Uint8 *src_addr, *dst_addr;
