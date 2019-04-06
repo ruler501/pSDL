@@ -34,7 +34,7 @@ static int pzmk_keymap[PZM_NUMKEYS];
 static SDLKey sdlk_keymap[PZM_NUMKEYS] = {SDLK_UNKNOWN};
 static char key_state[PZM_NUMKEYS] = {SDL_RELEASED};
 
-const unsigned short* keyboard_register = (unsigned short*)0xA44B0000;
+const volatile unsigned short* keyboard_register = (unsigned short*)0xA44B0000;
 unsigned short lastkey[8];
 unsigned short holdkey[8];
 
@@ -59,7 +59,7 @@ int keydownhold(int basic_keycode) {
     return (0 != (holdkey[word] & 1<<bit));
 }
 static int keydown(int basic_keycode) {
-	const unsigned short* keyboard_register = (unsigned short*)0xA44B0000;
+	const volatile unsigned short* keyboard_register = (unsigned short*)0xA44B0000;
 	int row, col, word, bit;
 	row = basic_keycode%10;
 	col = basic_keycode/10-1;
@@ -101,11 +101,11 @@ void PZM_PumpEvents(_THIS)
 	}
 	if(keydown(KEY_PRGM_XSQUARED)){
 		//Move mouse up
-		SDL_PrivateMouseMotion(0,1,0,2);
+		SDL_PrivateMouseMotion(0,1,0,-2);
 	}
 	if(keydown(KEY_PRGM_H)){
 		//Move mouse down
-		SDL_PrivateMouseMotion(0,1,0,-2);
+		SDL_PrivateMouseMotion(0,1,0,2);
 	}
 }
 
