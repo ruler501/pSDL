@@ -1,9 +1,9 @@
 CC		=	sh3eb-elf-gcc
-AR		=	sh3eb-elf-ar
-RANLIB	=	sh3eb-elf-ranlib
+AR		=	sh3eb-elf-gcc-ar
+RANLIB	=	sh3eb-elf-gcc-ranlib
 
 INCLUDE	=	-I include -I ../../include
-CFLAGS	=	-Wall -Wextra -m4a-nofpu -mb -Os -mhitachi -lgcc -L../../lib -D _PRIZM 
+CFLAGS	=	-Wall -Wextra -m4a-nofpu -mb -O2 -flto -fuse-linker-plugin -mhitachi -lgcc -L../../lib -D _PRIZM 
 
 TARGET = libSDL.a
 CONFIG_H = include/SDL_config.h

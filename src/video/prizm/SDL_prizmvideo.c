@@ -103,15 +103,6 @@ VideoBootStrap PZM_bootstrap = {
 
 static int PZM_VideoInit(_THIS, SDL_PixelFormat *vformat)
 {
-//	this->hidden->cx = (int)is_cx;
-
-/*	if ( this->hidden->cx ) {
-		vformat->BitsPerPixel = 16;
-		vformat->Rmask = PZM_RMASK16;
-		vformat->Gmask = PZM_GMASK16;
-		vformat->Bmask = PZM_BMASK16;
-	} else
-		vformat->BitsPerPixel = 8;*/
 	vformat->BitsPerPixel = 16;
 	vformat->Rmask = PZM_RMASK16;
 	vformat->Gmask = PZM_GMASK16;
@@ -157,22 +148,12 @@ static SDL_Surface *PZM_SetVideoMode(_THIS, SDL_Surface *current,
 		bmask = PZM_BMASK16;
 	}
 
-	if ( this->hidden->buffer ) {
-		SDL_free( this->hidden->buffer );
-	}
-
-	this->hidden->buffer = SDL_malloc((bpp / 8) * width * height);
-	if ( this->hidden->buffer == NULL) {
-		SDL_SetError("Couldn't allocate buffer for requested mode");
-		SDL_OutOfMemory();
-		return(NULL);
-	}
+	this->hidden->buffer = getSecondaryVramAddress();
 
 	memset(this->hidden->buffer, 0, (bpp / 8) * width * height);
 
 	/* Allocate the new pixel format for the screen */
 	if ( ! SDL_ReallocFormat(current, bpp, rmask, gmask, bmask, 0) ) {
-		SDL_free(this->hidden->buffer);
 		this->hidden->buffer = NULL;
 		SDL_SetError("Couldn't allocate new pixel format for requested mode");
 		return(NULL);
