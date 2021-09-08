@@ -23,7 +23,7 @@
 
 #ifdef SDL_TIMER_PRIZM
 
-#include <fxcg_syscalls.h>
+#include <fxcg/rtc.h>
 //#include <RTC_syscalls.h>
 
 #include "SDL_timer.h"
@@ -65,7 +65,7 @@ Uint32 SDL_GetTicks (void)
     unsigned char h1 = '0' + (*RHRCNT & 0b1111);
     unsigned char h2 = '0' + ((*RHRCNT >> 4) & 0b11);
     diff = (m8*8+s1*1000+s2*10000+m1*6000+m2*60000+h1*3600000+h2*36000000) - start*/
-    return 7.8125*(RTC_GetTicks()-start);
+    return (RTC_GetTicks()-start)*125/16;
 }
 
 void SDL_Delay (Uint32 ms)

@@ -33,12 +33,9 @@
 /* Hidden "this" pointer for the video functions */
 #define _THIS	SDL_VideoDevice *this
 
-char* VRAM = (char *) 0xA8000000;
-
 #define PZM_RMASK16 0xF800
 #define PZM_GMASK16 0x07E0
 #define PZM_BMASK16 0x001F
-#define SCREEN_BASE_ADDRESS VRAM
 
 #define PZM_PIXEL_ADDR(origin, x, y, pitch, bpp) ((char *)origin + ((x) * (bpp)) + ((y) * (pitch)))
 #define PZM_SURF_PIXEL(surface, x, y) PZM_PIXEL_ADDR(surface->pixels, x, y, surface->pitch, surface->format->BytesPerPixel)
